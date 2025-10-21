@@ -1,0 +1,277 @@
+/* 🌙 Futuristic Dark Glass Theme */
+body {
+  margin: 0;
+  font-family: "Poppins", sans-serif;
+  background: radial-gradient(circle at top left, #040404, #0a0a0a 80%);
+  color: #e8e8e8;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  padding: 40px 15px;
+  overflow-x: hidden;
+}
+
+/* 🌌 Animated Ambient Glow */
+body::before {
+  content: "";
+  position: fixed;
+  top: -150px;
+  right: -100px;
+  width: 500px;
+  height: 500px;
+  background: radial-gradient(circle, rgba(0, 255, 180, 0.2), transparent 70%);
+  border-radius: 50%;
+  filter: blur(120px);
+  animation: ambientFloat 8s ease-in-out infinite alternate;
+  z-index: 0;
+}
+
+@keyframes ambientFloat {
+  from {
+    transform: translate(0, 0);
+  }
+  to {
+    transform: translate(-60px, 40px);
+  }
+}
+
+/* 🎛️ Main Container */
+.app-container {
+  position: relative;
+  z-index: 1;
+  width: 95%;
+  max-width: 750px;
+  background: rgba(20, 20, 20, 0.85);
+  backdrop-filter: blur(12px);
+  padding: 34px;
+  border-radius: 22px;
+  box-shadow: 0 0 40px rgba(0, 255, 150, 0.1);
+  animation: fadeIn 0.8s ease;
+  overflow: hidden;
+  border: 1px solid rgba(0, 255, 180, 0.1);
+}
+
+.app-container::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  padding: 2px;
+  border-radius: 22px;
+  background: linear-gradient(120deg, #00ff99, #00ccff, #7b61ff);
+  background-size: 400% 400%;
+  -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
+  animation: gradientBorder 7s linear infinite;
+  z-index: -1;
+}
+
+@keyframes gradientBorder {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+/* ✨ Title */
+.title {
+  font-size: 2.2rem;
+  font-weight: 700;
+  text-align: center;
+  background: linear-gradient(90deg, #00ffcc, #00ccff, #b37fff);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  text-shadow: 0 0 12px rgba(0, 255, 180, 0.4);
+  margin-bottom: 26px;
+  letter-spacing: 1.2px;
+  animation: fadeInUp 0.8s ease;
+}
+
+/* 📝 Text Area */
+.text-input {
+  width: 100%;
+  min-height: 180px;
+  padding: 16px;
+  background: rgba(10, 10, 10, 0.9);
+  color: #f0f0f0;
+  border: 1px solid #222;
+  border-radius: 14px;
+  resize: none;
+  font-size: 1rem;
+  line-height: 1.5;
+  transition: all 0.3s ease;
+  box-shadow: inset 0 0 12px rgba(0, 255, 150, 0.05);
+}
+
+.text-input:focus {
+  outline: none;
+  border-color: #00ff99;
+  box-shadow: 0 0 18px rgba(0, 255, 150, 0.4);
+}
+
+/* 📄 Paragraph Settings */
+.paragraph-settings,
+.voice-settings {
+  background: rgba(18, 18, 18, 0.9);
+  border-radius: 14px;
+  padding: 20px;
+  margin-top: 28px;
+  box-shadow: 0 0 25px rgba(0, 255, 150, 0.1);
+  border: 1px solid rgba(0, 255, 150, 0.05);
+  animation: fadeInUp 0.8s ease;
+}
+
+.paragraph-settings h3,
+.voice-settings h3 {
+  color: #00ffcc;
+  text-align: center;
+  margin-bottom: 18px;
+  font-weight: 600;
+}
+
+/* Paragraph Items */
+.paragraph-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: #121212;
+  border-radius: 12px;
+  padding: 10px 15px;
+  margin-bottom: 12px;
+  transition: all 0.3s ease;
+  border: 1px solid #1f1f1f;
+}
+
+.paragraph-item:hover {
+  transform: translateY(-2px);
+  border-color: #00ff99;
+  box-shadow: 0 0 18px rgba(0, 255, 150, 0.15);
+}
+
+.paragraph-item strong {
+  color: #00ff99;
+  flex-shrink: 0;
+}
+
+.paragraph-item em {
+  flex: 1;
+  color: #ccc;
+  margin-left: 10px;
+  font-size: 0.9rem;
+}
+
+/* 🧩 Repeat Input */
+.repeat-input {
+  width: 65px;
+  padding: 6px;
+  background: #0f0f0f;
+  color: #fff;
+  border: 1px solid #333;
+  border-radius: 8px;
+  text-align: center;
+  font-size: 1rem;
+  transition: all 0.3s ease;
+}
+
+.repeat-input:focus {
+  border-color: #00ff99;
+  box-shadow: 0 0 10px rgba(0, 255, 150, 0.3);
+  outline: none;
+}
+
+/* 🎚️ Speed Control */
+.speed-control {
+  margin-top: 15px;
+}
+
+.speed-control h4 {
+  color: #00ff99;
+  font-size: 1rem;
+  margin-bottom: 8px;
+}
+
+.speed-control input[type="range"] {
+  width: 100%;
+  cursor: pointer;
+  accent-color: #00ff99;
+}
+
+/* 🎧 Buttons */
+.bottom-controls {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  margin-top: 32px;
+}
+
+.btn {
+  position: relative;
+  background: linear-gradient(130deg, #00ff99, #00ccff);
+  color: #0a0a0a;
+  border: none;
+  border-radius: 12px;
+  padding: 14px 24px;
+  font-size: 1rem;
+  cursor: pointer;
+  font-weight: 600;
+  overflow: hidden;
+  box-shadow: 0 0 15px rgba(0, 255, 150, 0.3);
+  transition: all 0.3s ease;
+}
+
+.btn:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 0 25px rgba(0, 255, 150, 0.6);
+}
+
+.btn:active {
+  transform: scale(0.96);
+}
+
+/* 💫 Soundwave Pulse (while speaking) */
+.btn-speaking {
+  animation: pulseGlow 1.6s infinite;
+  background: linear-gradient(130deg, #00ffcc, #b37fff);
+  box-shadow: 0 0 25px rgba(179, 127, 255, 0.5);
+}
+
+@keyframes pulseGlow {
+  0% {
+    box-shadow: 0 0 10px rgba(0, 255, 180, 0.4);
+  }
+  50% {
+    box-shadow: 0 0 40px rgba(179, 127, 255, 0.6);
+  }
+  100% {
+    box-shadow: 0 0 10px rgba(0, 255, 180, 0.4);
+  }
+}
+
+/* ⚡ Global Animations */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(15px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(25px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
