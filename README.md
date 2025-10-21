@@ -166,7 +166,3 @@ It really motivates me to build more projects like this ❤️
 
 🌈 *“ReVoice – because your notes deserve to be heard.”*
 
-```
-
----
-
